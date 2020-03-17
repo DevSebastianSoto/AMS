@@ -31,12 +31,12 @@ def sobre_nosotros():
 
 @app.route('/contacto',methods=['GET','POST'])
 def contacto():
-    # form = ContactForm()
+    form = ContactForm()
 
-    # if form.validate_on_submit():
-    #     flash(f'{form.first_name.data} {form.last_name.data}, gracias por contactarnos, pronto le responderemos!','success')
-    #     utils.sendMail(form.email.data,form.first_name.data,form.last_name.data,form.message.data)
-    #     return redirect(url_for('index'))
+    if form.validate_on_submit():
+        flash(f'{form.first_name.data} {form.last_name.data}, gracias por contactarnos, pronto le responderemos!','success')
+        utils.sendMail(form.email.data,form.first_name.data,form.last_name.data,form.message.data)
+        return redirect(url_for('index'))
 
     return render_template('views/contact/contact.html', dir_title='Contact', form=form)
 
