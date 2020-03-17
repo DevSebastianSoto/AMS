@@ -19,6 +19,20 @@
 <body">
 
   <header>
+    <div class="alerts row justify-content-center w-100" style="position:fixed; bottom: 20px; z-index: 98">
+      <div class="col-md-8">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category,message in messages %}
+        <div class="text-center alert alert-{{ category }}">
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+
     {% include 'views/base/nav.html' %}
     <div id="top"></div>
     {% block header %}

@@ -3,18 +3,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3 class="font-weight-bold mb-0"><a href="/">SNSM</a></h3>
+                    <a class="navbar-brand" href="{{ url_for('index') }}">
+                        <img height="30" class="d-inline-block align-top" alt="AMS logo" src="{{ url_for('static', filename='img/svg/ams_dark.svg') }}">
+                    </a>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-unstyled d-flex justify-content-center mb-0 mt-2 text-uppercase">
                         <li>
-                            <a class="mx-3" href="/about">About</a>
+                            <a class="mx-3" href="{{ url_for('about') }}">Sobre Nosotros</a>
                         </li>
                         <li>
+                            <!-- TODO Change this url -->
                             <a class="mx-3" href="/blog">Blog</a>
                         </li>
                         <li>
-                            <a class="mx-3" href="/contact">Contact</a>
+                            <a class="mx-3" href="{{ url_for('contact') }}">Contacto</a>
                         </li>
                     </ul>
                 </div>

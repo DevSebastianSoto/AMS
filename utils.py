@@ -1,33 +1,17 @@
 import os
 import json
+import smtplib
 
+EMAIL_ADDRESS = 'dev.snsm@gmail.com'
+EMAIL_PASSWORD = 'xluixaleqegxonuh'
 
 def readJson(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 
-def get_article_by_id(id: str):
-    articles_json = readJson(os.path.join('content', 'articles.json'))
-    for a in articles_json:
-        if a['href'] == id:
-            return a
-
-
-def get_full_project_info():
-    projects = readJson(os.path.join('content', 'projects.json'))
-    technologies = readJson(os.path.join('content', 'technologies.json'))
-    full = []
-    for k, v in projects.items():
-        for proj in v:
-            proj["techs"].append(k)
-            full_techs = []
-            proj["techs"].sort()
-            for tech in proj["techs"]:
-                full_techs.append({
-                    "name": technologies[tech]['name'],
-                    "color": technologies[tech]['color'],
-                })
-            proj['techs'] = full_techs
-            full.append(proj)
-    return full
+def sendMail(email, first_name, last_name, msg):
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+        msg = f'Subject: {first_name} {last_name}\n\n{msg}'
+        smtp.sendmail(email, EMAIL_ADDRESS, msg)

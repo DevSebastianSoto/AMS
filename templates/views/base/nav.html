@@ -17,7 +17,7 @@
                 {% else %}
                 {{ nav.link(nav_item.id, nav_item.title, nav_item.href) }}
                 {% endif %}
-                {% elif nav_item.id != 'technologies' and not index %}
+                {% elif nav_item.id != 'servicios' and not index %}
                 {% if nav_item.sub_links|length %}
                 {{ nav.drop_down(nav_item.id,nav_item.title,nav_item.sub_links) }}
                 {% else %}

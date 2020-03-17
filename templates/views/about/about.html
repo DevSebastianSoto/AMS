@@ -1,0 +1,50 @@
+{% extends "views/base/base.html" %}
+{% import 'components/card.html' as card %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('.static',filename='css/about.min.css') }}">
+{% endblock styles %}
+
+{% block header %}
+{% set bg = url_for('static', filename='img/extras/dylan-gillis-unsplash.jpg') %}
+<div class="view jarallax z-depth-1" data-jarallax='{"speed": 0.2}' style="background-image: url('{{ bg }}');">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 white-text text-center">
+                    <h1 class="display-3 mb-0 pt-md-5 pt-5 white-text font-weight-bold wow fadeInDown"
+                        data-wow-delay="0.3s"> Sobre
+                        <a class="text-primary font-weight-bold">Nosotros</a>
+                    </h1>
+                    <h5 class="text-uppercase pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown"
+                        data-wow-delay="0.3s">Advisory & Management Services</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container-fluid py-5 px-2">
+    <div class="row text-justify justify-content-arouund w-75 m-auto pb-5">
+        <div class="col-lg mb-5">
+            <!-- diferenciadores -->
+            {% include 'views/about/diferenciadores.html' %}
+        </div>
+        <div class="col align-self-center"><img src="{{ url_for('static', filename='img/extras/john_schnobrich_1_unsplash.jpg') }}" alt="People looking at computer" class="img-fluid"></div>
+    </div>
+
+    <div class="row text-justify w-75 m-auto">
+        <div class="col">
+            <!-- valores -->
+            {% include 'views/about/valores.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/custom/views/about.js') }}"></script>
+{% endblock scripts %}

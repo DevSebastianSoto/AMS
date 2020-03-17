@@ -1,10 +1,10 @@
 <section id="clients" class="mb-5">
     <div class="container-fluid pt-5">
         <div class="text-center">
-            <h3 class="font-weight-bold mb-4 pb-2">Algunos de nuestros clientes</h3>
-            <p class="w-responsive mx-auto mb-5">
+            <h3 class="font-weight-bold mb-4 pb-2">Clientes y socios</h3>
+            <!-- <p class="w-responsive mx-auto mb-5">
                 Estas son algunas de las empresas con las que AMS ha trabajado.
-            </p>
+            </p> -->
         </div>
         <div id="carouselClients" class="carousel slide" data-ride="carousel">
             <div>
@@ -17,7 +17,7 @@
                     <span class="sr-only">Next</span>
                 </a>
                 <div class="w-75 m-auto carousel-inner">
-                    {% for client_row in clients.items() | batch(6)%}
+                    {% for client_row in clients.items() | batch(3)%}
                     <div class="carousel-item justify-content-center {{ 'active' if loop.index == 1 }}">
                         <div class="card-deck w-100 justify-content-center">
                             {% for key, value in client_row %}
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <ol class="carousel-indicators pb-2 mb-0" style="position: relative;">
-                {% for client_row in clients | batch(6)%}
+                {% for client_row in clients | batch(3) %}
                 <li data-target="#carouselClients" data-slide-to="{{ loop.index-1 }}"
                     class="{{ 'active' if loop.index == 1 }} primary-color"></li>
                 {% endfor %}

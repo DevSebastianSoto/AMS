@@ -3,18 +3,20 @@
 let mybutton = $("#btn_scroll_top");
 
 $(function () {
-    const offset = 20; //Offset of 20px
-    $('#nv_technologies').click(function (e) {
-        $('html, body').animate({
-            scrollTop: $("#technologies").offset().top + offset
-        }, 1500);
+    const offset = -50; //Offset of 20px
+    $('#nv_servicios').click(function (e) {
+        if (window.location.href.split('/').reverse()[0] == '') {
+            $('html, body').animate({
+                scrollTop: $("#services .mask").offset().top + offset
+            }, 1500);
+        }
 
     });
     mybutton.click(function (e) {
         $('html, body').animate({
             scrollTop: $("#top").offset().top
         }, 1500);
-        mybutton.fadeOut("slow","linear");
+        mybutton.fadeOut("slow", "linear");
     });
 });
 
@@ -25,8 +27,9 @@ window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        mybutton.fadeIn("slow","linear");
+        mybutton.fadeIn("slow", "linear");
     } else {
-        mybutton.fadeOut("slow","linear");
+        mybutton.fadeOut("slow", "linear");
     }
 }
+

@@ -1,9 +1,11 @@
 import os
 import utils
 import jinja2
-from flask import Flask, render_template
+from flask import Flask, render_template,flash,redirect,url_for
+from forms import ContactForm
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "bda15c5adda26a64d0015dec0788894e"
 
 template_dir = os.path.join('.', 'templates')
 loader = jinja2.FileSystemLoader(template_dir)
@@ -18,18 +20,25 @@ def inject_dict_for_all_templates():
 
 @app.route('/')
 def index():
-    clients_info = utils.readJson(os.path.join('content','clients.json'))
+    clients_info = utils.readJson(os.path.join('content', 'clients.json'))
     return render_template('views/index/index.html', index=True, clients=clients_info)
 
 
-# @app.route('/about')
-# def about():
-#     return render_template('views/about/about.html', dir_title='About')
+@app.route('/about')
+def about():
+    return render_template('views/about/about.html', dir_title='Sobre Nosotros')
 
 
-@app.route('/contact')
+@app.route('/contact',methods=['GET','POST'])
 def contact():
-    return render_template('views/contact/contact.html', dir_title='Contact')
+    form = ContactForm()
+
+    if form.validate_on_submit():
+        flash(f'{form.first_name.data} {form.last_name.data}, gracias por contactarnos, pronto le responderemos!','success')
+        utils.sendMail(form.email.data,form.first_name.data,form.last_name.data,form.message.data)
+        return redirect(url_for('index'))
+
+    return render_template('views/contact/contact.html', dir_title='Contact', form=form)
 
 
 @app.errorhandler(404)

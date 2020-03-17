@@ -8,13 +8,19 @@
     {
         "id": "sobre-nosotros",
         "title": "Sobre Nosotros",
-        "href": "/sobre-nosotros",
+        "href": "/about",
+        "sub_links": []
+    },
+    {
+        "id": "servicios",
+        "title": "Servicios",
+        "href": "",
         "sub_links": []
     },
     {
         "id": "contacto",
         "title": "Contacto",
-        "href": "/contacto",
+        "href": "/contact",
         "sub_links": []
     }
 ]
