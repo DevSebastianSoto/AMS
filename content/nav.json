@@ -8,7 +8,7 @@
     {
         "id": "sobre-nosotros",
         "title": "Sobre Nosotros",
-        "href": "/about",
+        "href": "/sobre-nosotros",
         "sub_links": []
     },
     {
@@ -20,7 +20,7 @@
     {
         "id": "contacto",
         "title": "Contacto",
-        "href": "/contact",
+        "href": "/contacto",
         "sub_links": []
     }
 ]
