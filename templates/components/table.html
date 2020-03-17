@@ -1,0 +1,20 @@
+{% macro simple(headers=[], rows=[]) %}
+    <table class="table table-responsive-lg text-capitalize">
+        <thead class="thead-dark text-center">
+            <tr>
+                {% for h in headers %}
+                    <th scope="col">{{ h }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in rows %}
+                <tr>
+                    {% for cell in r %}
+                        <td scope="col">{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}

@@ -1,0 +1,43 @@
+{% extends "views/base/base.html" %}
+{% import 'components/card.html' as card %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('.static',filename='css/index.min.css') }}">
+{% endblock styles %}
+
+{% block header %}
+{% set bg = url_for('static', filename='img/backgrounds/chairs.jpg') %}
+<div class="view jarallax z-depth-1" data-jarallax='{"speed": 0.2}' style="background-image: url('{{ bg }}');">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 white-text text-center">
+                    <h1 class="display-3 mb-0 pt-md-5 pt-5 white-text font-weight-bold wow fadeInDown"
+                        data-wow-delay="0.3s">Estamos listos para
+                        <a class="text-primary font-weight-bold">ayudarle</a>
+                    </h1>
+                    <h5 class="text-uppercase pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown"
+                        data-wow-delay="0.3s">Advisory & Management Services</h5>
+                    <div class="wow fadeInDown" data-wow-delay="0.3s">
+                        <a class="btn btn-primary btn-lg btn-rounded" target="blank" href="/contacto">contactenos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<!-- about -->
+{% include 'views/index/about.html' %}
+<!-- services -->
+{% include 'views/index/services.html' %}
+<!-- clients -->
+{% include 'views/index/clients.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/custom/views/index.js') }}"></script>
+{% endblock scripts %}

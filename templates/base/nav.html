@@ -1,0 +1,32 @@
+{% import 'components/nav.html' as nav %}
+<nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar z-depth-0">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img height="30" class="d-inline-block align-top ams-logo" alt="AMS logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nb" aria-controls="nb"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nb">
+            <ul class="navbar-nav mr-auto">
+                {% for nav_item in nav_bar %}
+                {% if index %}
+                {% if nav_item.sub_links|length %}
+                {{ nav.drop_down(nav_item.id,nav_item.title,nav_item.sub_links) }}
+                {% else %}
+                {{ nav.link(nav_item.id, nav_item.title, nav_item.href) }}
+                {% endif %}
+                {% elif nav_item.id != 'technologies' and not index %}
+                {% if nav_item.sub_links|length %}
+                {{ nav.drop_down(nav_item.id,nav_item.title,nav_item.sub_links) }}
+                {% else %}
+                {{ nav.link(nav_item.id, nav_item.title, nav_item.href) }}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+</nav>
