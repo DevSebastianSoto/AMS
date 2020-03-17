@@ -1,0 +1,35 @@
+@import "../scss/mdb.scss";
+
+.article {
+  p,
+  td,
+  th,
+  ul,
+  ol,
+  li {
+    line-height: 2rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 2rem;
+  }
+  hr {
+    margin: 2rem;
+  }
+  li {
+    margin-bottom: 1rem;
+  }
+}
+.navbar:not(.top-nav-collapse) {
+  background-color: $white !important;
+  @extend .z-depth-1;
+
+  .nav-item > a,
+  a.navbar-brand {
+    color: inherit !important;
+  }
+}

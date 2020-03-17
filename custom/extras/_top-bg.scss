@@ -1,0 +1,67 @@
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
+  }
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+  @extend .z-depth-0;
+  .nav-item > a,
+  a.navbar-brand {
+    color: white !important;
+    font-size: 1.18rem;
+  }
+  .ams-logo {
+    content: url("../img/svg/ams_light.svg");
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background-color: $white !important;
+    .nav-item > a,
+    a.navbar-brand {
+      color: inherit !important;
+    }
+    .ams-logo {
+      content: url("../img/svg/ams_light.svg");
+    }
+  }
+}
+.top-nav-collapse {
+  background-color: $white !important;
+  @extend .z-depth-1;
+  .ams-logo {
+    content: url("../img/svg/ams_light.svg");
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background-color: $white !important;
+    .nav-item > a,
+    a.navbar-brand {
+      color: inherit !important;
+    }
+    .ams-logo {
+      content: url("../img/svg/ams_light.svg");
+    }
+  }
+}
+
+div.view.jarallax {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}

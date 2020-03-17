@@ -1,0 +1,128 @@
+// Your custom styles
+// scroll top btn
+
+.col div p {
+  line-height: 1.8rem;
+}
+
+#btn_scroll_top {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 30px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  border-radius: 15px; /* Rounded corners */
+  width: 3rem;
+  opacity: 0.3;
+  transition: 300ms ease-in-out;
+  &:hover {
+    @extend .z-depth-1-half;
+    opacity: 1;
+  }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 0.8;
+}
+
+.top-nav-collapse {
+  background-color: $white !important;
+  @extend .z-depth-1;
+}
+
+h5 {
+  letter-spacing: 3px;
+}
+// card narrow
+.view.view-cascade {
+  margin-top: -1.25rem;
+  margin-right: 4%;
+  margin-left: 4%;
+}
+.card.card-cascade .view.view-cascade {
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.card.card-cascade.narrower {
+  margin-top: 1.25rem;
+}
+.project-card,
+.project-card > .card.card-cascade.narrower > .view.view-cascade img {
+  cursor: pointer !important;
+}
+.project-card {
+  @media (max-width: 740px) {
+    .view {
+      height: auto;
+    }
+  }
+  .card {
+    transition: ease-out $shadow-off-transition-time;
+    .view.view-cascade {
+      @extend .z-depth-1;
+      transition: ease-out $shadow-off-transition-time;
+    }
+  }
+  .card:hover {
+    @extend .z-depth-2;
+    transition: ease-in $shadow-on-transition-time;
+    .view.view-cascade {
+      @extend .z-depth-1-half;
+      transition: ease-in $shadow-on-transition-time;
+    }
+  }
+}
+
+.card {
+  max-height: 25rem;
+}
+
+.box-underline::after {
+  content: " ";
+  width: 40%;
+  display: block;
+  border-bottom: 3px solid $dark;
+  margin: auto;
+  padding-top: 5px;
+}
+
+.card-columns {
+  column-gap: $card-column-gap;
+  .card {
+    margin-bottom: $card-column-gap;
+  }
+
+  @include media-breakpoint-only(sm) {
+    column-count: 1;
+  }
+  @include media-breakpoint-only(md) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(lg) {
+    column-count: 3;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 3;
+  }
+}
+
+.lift {
+  @extend .z-depth-1;
+  transition: 350ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  &:hover {
+    @extend .z-depth-2;
+  }
+}
+
+.bgimg {
+  @extend .z-depth-1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+}

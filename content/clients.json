@@ -1,0 +1,170 @@
+{
+    "adisa": {
+        "href": "adisa.cr",
+        "description": "",
+        "format": "u",
+        "ext": "jpg"
+    },
+    "aya": {
+        "href": "aya.go.cr",
+        "description": "",
+        "format": "u",
+        "ext": "jpg"
+    },
+    "BAC credomatic": {
+        "href": "baccredomatic.com",
+        "description": "",
+        "format": "c",
+        "ext": "png"
+    },
+    "banco BCT": {
+        "href": "bancobct.com",
+        "description": "",
+        "format": "c",
+        "ext": "jpg"
+    },
+    "batcca": {
+        "href": "batcentralamerica.com",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    },
+    "cabletica": {
+        "href": "cabletica.com",
+        "description": "",
+        "format": "u",
+        "ext": "jpg"
+    },
+    "cámara de bancos e instituciones financieras de costa rica": {
+        "href": "camaradebancos.fi.cr",
+        "description": "",
+        "format": "c",
+        "ext": "png"
+    },
+    "cathay": {
+        "href": "bancocathay.com",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    },
+    "clorox": {
+        "href": "costa-rica.clorox.com",
+        "description": "",
+        "format": "u",
+        "ext": "jpg"
+    },
+    "coopenae": {
+        "href": "coopenae.fi.cr",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    },
+    "coopenae seguros": {
+        "href": "coopenaeseguros.com",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    },
+    "coopeservidores": {
+        "href": "coopeservidores.fi.cr/es/",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    },
+    "cuestamoras": {
+        "href": "cuestamoras.com",
+        "description": "",
+        "format": "c",
+        "ext": "png"
+    },
+    "dos pinos": {
+        "href": "dospinos.com",
+        "description": "",
+        "format": "c",
+        "ext": "jpg"
+    },
+    "hospira": {
+        "href": "es-la.facebook.com/pages/Hospira-Costa-Rica-Ltda/109600479123543",
+        "description": "",
+        "format": "c",
+        "ext": "png"
+    },
+    "ICU medical": {
+        "href": "es.icumed.com",
+        "description": "",
+        "format": "c",
+        "ext": "jpg"
+    },
+    "innova360": {
+        "href": "innova360.biz",
+        "description": "",
+        "format": "l",
+        "ext": "png"
+    },
+    "ISM services": {
+        "href": "ism-serv.com",
+        "description": "",
+        "format": "c",
+        "ext": "png"
+    },
+    "ministerio de comercio exterior costa rica": {
+        "href": "comex.go.cr",
+        "description": "",
+        "format": "c",
+        "ext": "jpg"
+    },
+    "municipalidad la union": {
+        "href": "launion.go.cr",
+        "description": "",
+        "format": "c",
+        "ext": "png"
+    },
+    "ncubo": {
+        "href": "ncubo.com",
+        "description": "",
+        "format": "l",
+        "ext": "png"
+    },
+    "new horizons": {
+        "href": "newhorizonscr.net",
+        "description": "",
+        "format": "c",
+        "ext": "webp"
+    },
+    "el orbe": {
+        "href": "elorbe.la/home-public",
+        "description": "",
+        "format": "c",
+        "ext": "png"
+    },
+    "poder judicial": {
+        "href": "pj.poder-judicial.go.cr",
+        "description": "",
+        "format": "c",
+        "ext": "png"
+    },
+    "prosoft": {
+        "href": "prosoft.cr/new_site",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    },
+    "sfe": {
+        "href": "sfe.go.cr/SitePages/Inicio.aspx",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    },
+    "teletica": {
+        "href": "teletica.com",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    },
+    "winit": {
+        "href": "winitconsultores.com",
+        "description": "",
+        "format": "u",
+        "ext": "png"
+    }
+}

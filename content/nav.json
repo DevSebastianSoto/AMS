@@ -1,0 +1,20 @@
+[
+    {
+        "id": "inicio",
+        "title": "Inicio",
+        "href": "/",
+        "sub_links": []
+    },
+    {
+        "id": "sobre-nosotros",
+        "title": "Sobre Nosotros",
+        "href": "/sobre-nosotros",
+        "sub_links": []
+    },
+    {
+        "id": "contacto",
+        "title": "Contacto",
+        "href": "/contacto",
+        "sub_links": []
+    }
+]

@@ -1,0 +1,12 @@
+@import "../scss/mdb.scss";
+@import "extras/card-carousel";
+@import "extras/top-bg";
+
+.carousel .carousel-control-prev-icon,
+.carousel .carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+}
+.border-top {
+  border-top-width: 3px !important;
+}
