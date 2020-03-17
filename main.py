@@ -24,12 +24,12 @@ def index():
     return render_template('views/index/index.html', index=True, clients=clients_info)
 
 
-@app.route('/about')
+@app.route('/sobre-nosotros')
 def about():
     return render_template('views/about/about.html', dir_title='Sobre Nosotros')
 
 
-@app.route('/contact',methods=['GET','POST'])
+@app.route('/contacto',methods=['GET','POST'])
 def contact():
     form = ContactForm()
 
