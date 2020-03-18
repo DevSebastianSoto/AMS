@@ -1,7 +1,7 @@
 import os
 import utils
 import jinja2
-from flask import Flask, render_template,flash,redirect,url_for
+from flask import Flask, render_template, flash, redirect, url_for
 from forms import ContactForm
 
 app = Flask(__name__)
@@ -29,13 +29,14 @@ def sobre_nosotros():
     return render_template('views/about/about.html', dir_title='Sobre Nosotros')
 
 
-@app.route('/contacto',methods=['GET','POST'])
+@app.route('/contacto', methods=['GET', 'POST'])
 def contacto():
     form = ContactForm()
-
     if form.validate_on_submit():
-        flash(f'{form.first_name.data} {form.last_name.data}, gracias por contactarnos, pronto le responderemos!','success')
-        utils.sendMail(form.email.data,form.first_name.data,form.last_name.data,form.message.data)
+        name = f'{form.first_name.data} {form.last_name.data}'
+        flash(f'{name}, gracias por contactarnos, pronto le responderemos!', 'success')
+        utils.sendMail(name, form.email.data,
+                       form.subject.data, form.message.data)
         return redirect(url_for('index'))
 
     return render_template('views/contact/contact.html', dir_title='Contact', form=form)

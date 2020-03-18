@@ -2,35 +2,52 @@
     {{ form.hidden_tag() }}
     {{ form.csrf_token }}
     <fieldset>
-        <!-- first name -->
-        <div class="md-form md-outline mt-0">
-            {% if form.first_name.errors %}
-            {{ form.first_name(class="form-control is-invalid") }}
-            <div class="invalid-feedback">
-                {% for error in form.first_name.errors %}
-                <span>{{ error }}</span>
-                {% endfor %}
+        <div class="form-row">
+            <!-- first name -->
+            <div class="col md-form md-outline mt-0">
+                {% if form.first_name.errors %}
+                {{ form.first_name(class="form-control is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.first_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.first_name(class="form-control") }}
+                {% endif %}
+
+                {{ form.first_name.label }}
             </div>
-            {% else %}
-            {{ form.first_name(class="form-control") }}
-            {% endif %}
-            
-            {{ form.first_name.label }}
+            <!-- last name -->
+            <div class="col md-form md-outline mt-0">
+                {% if form.last_name.errors %}
+                {{ form.last_name(class="form-control is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.last_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.last_name(class="form-control") }}
+                {% endif %}
+
+                {{ form.last_name.label }}
+            </div>
         </div>
-        <!-- last name -->
+        <!-- subject -->
         <div class="md-form md-outline mt-0">
-            {% if form.last_name.errors %}
-            {{ form.last_name(class="form-control is-invalid") }}
+            {% if form.subject.errors %}
+            {{ form.subject(class="form-control is-invalid") }}
             <div class="invalid-feedback">
-                {% for error in form.last_name.errors %}
+                {% for error in form.subject.errors %}
                 <span>{{ error }}</span>
                 {% endfor %}
             </div>
             {% else %}
-            {{ form.last_name(class="form-control") }}
+            {{ form.subject(class="form-control") }}
             {% endif %}
-            
-            {{ form.last_name.label }}
+
+            {{ form.subject.label }}
         </div>
         <!-- email -->
         <div class="md-form md-outline mt-0">
@@ -59,11 +76,11 @@
             {% else %}
             {{ form.message(class="form-control") }}
             {% endif %}
-            
+
             {{ form.message.label }}
         </div>
         <div class="md-outline mt-0">
-            <input type="submit" class="btn btn-primary btn-md btn-block ml-0 mb-0">
+            <button type="submit" class="btn btn-primary btn-md btn-block ml-0 mb-0">Enviar</button>
         </div>
     </fieldset>
 </form>
