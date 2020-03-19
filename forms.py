@@ -6,32 +6,21 @@ from wtforms.validators import DataRequired, Length, Email, InputRequired
 class ContactForm(FlaskForm):
     first_name = StringField(
         'Nombre',
-        validators=[
-            DataRequired()
-        ]
+        validators=[DataRequired(), Length(min=2, max=20)]
     )
     last_name = StringField(
         'Apellido',
-        validators=[
-            DataRequired()
-        ]
+        validators=[DataRequired(), Length(min=2, max=20)]
     )
     subject = StringField(
         'Asunto',
-        validators=[
-            DataRequired()
-        ]
+        validators=[DataRequired(), Length(min=2, max=30)]
     )
     email = StringField(
         'Correo',
-        validators=[
-            DataRequired(), Email()
-        ]
+        validators=[DataRequired(), Email()]
     )
     message = TextAreaField(
         'Su mensaje',
-        validators=[
-            DataRequired(),
-            Length(max=500)
-        ]
+        validators=[DataRequired(), Length(max=500)]
     )

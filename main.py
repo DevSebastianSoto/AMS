@@ -21,12 +21,14 @@ def inject_dict_for_all_templates():
 @app.route('/')
 def index():
     clients_info = utils.readJson(os.path.join('content', 'clients.json'))
-    return render_template('views/index/index.html', index=True, clients=clients_info)
+    return render_template('views/index/index.html', index=True,
+                           clients=clients_info)
 
 
 @app.route('/sobre-nosotros')
 def sobre_nosotros():
-    return render_template('views/about/about.html', dir_title='Sobre Nosotros')
+    return render_template('views/about/about.html', dir_title='Sobre
+                           Nosotros')
 
 
 @app.route('/contacto', methods=['GET', 'POST'])
@@ -34,12 +36,14 @@ def contacto():
     form = ContactForm()
     if form.validate_on_submit():
         name = f'{form.first_name.data} {form.last_name.data}'
-        flash(f'{name}, gracias por contactarnos, pronto le responderemos!', 'success')
+        flash(f'{name}, gracias por contactarnos! Pronto le responderemos',
+              'success')
         utils.sendMail(name, form.email.data,
                        form.subject.data, form.message.data)
         return redirect(url_for('index'))
 
-    return render_template('views/contact/contact.html', dir_title='Contact', form=form)
+    return render_template('views/contact/contact.html', dir_title='Contact',
+                           form=form)
 
 
 @app.errorhandler(404)
