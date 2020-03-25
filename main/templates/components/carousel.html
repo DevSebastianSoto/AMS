@@ -9,7 +9,7 @@
 </div>
 {% endmacro %}
 
-{% macro full_screen(id,info,folder,mask_color="rgba-black-light") %}
+{% macro full_screen(id,info,folder,full_screen=false, mask_color="rgba-black-light") %}
 <div id="{{ id+'_indicators' }}" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         {% for client_row in clients | batch(3) %}
@@ -17,12 +17,12 @@
             class="{{ 'active' if loop.index == 1 }} primary-color"></li>
         {% endfor %}
     </ol>
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner {{ 'full-screen' if full_screen }}" role="listbox">
         {% for slide in info %}
         {% set bg = url_for('static', filename='img/'+folder+'/'+slide.img) %}
         <div class="carousel-item {{ 'active' if loop.index == 1 }} view jarallax z-depth-1"
             data-jarallax='{"speed": 0.2}' style="background-image: url('{{ bg }}')">
-            <div class="mask {{ mask_color }} row align-items-center">
+            <div class="mask {{ mask_color }} row m-0 align-items-center">
                 <div class="col text-center">
                     <h1 class="display-3 mb-0 pt-md-5 pt-5 white-text font-weight-bold wow fadeInDown"
                         data-wow-delay="0.3s">{{ slide.title + ' '}}

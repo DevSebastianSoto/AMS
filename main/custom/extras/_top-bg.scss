@@ -20,6 +20,7 @@ header,
   .nav-item > a,
   a.navbar-brand {
     color: white !important;
+    font-weight: 400;
     font-size: 1.18rem;
   }
   .ams-logo {
@@ -66,12 +67,14 @@ div.view.jarallax {
   background-position: center center;
 }
 
-.carousel-item {
-  height: 100vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.full-screen {
+  .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 }
