@@ -12,8 +12,7 @@
 {% macro full_screen(id,info,folder,mask_color="rgba-black-light") %}
 <div id="{{ id+'_indicators' }}" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-        {{info}}
-        {% for slide in info %}
+        {% for client_row in clients | batch(3) %}
         <li data-target="#{{ id+'_indicators' }}" data-slide-to="{{ loop.index-1 }}"
             class="{{ 'active' if loop.index == 1 }} primary-color"></li>
         {% endfor %}
