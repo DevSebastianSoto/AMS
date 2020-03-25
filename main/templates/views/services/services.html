@@ -1,0 +1,44 @@
+{% extends 'views/base/base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('.static',filename='css/services.min.css') }}">
+
+{% endblock styles %}
+
+{% block content %}
+<div class="container px-5">
+    <div class="container mt-5 mb-3 pt-5">
+        <div class="row ml-2">
+            <div class="col">
+                <div class="row">
+                    <h1 class="display-4 text-capitalize">
+                        Servicios
+                    </h1>
+                </div>
+                <div class="row">
+                    <div class="text-muted font-weight-light">
+                        <h4>AMS</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="container p-0">
+                    <div class="bgimg mb-5 rounded-lg"
+                        style="background-image: url({{ url_for('.static', filename='img/extras/ams-software.jpg') }});background-position: center;">
+                    </div>
+                </div>
+                <div class="container text-justify p-0">
+                    <div class="article">
+                        content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

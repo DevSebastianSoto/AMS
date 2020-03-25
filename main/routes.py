@@ -4,6 +4,7 @@ import main.utils as utils
 from main.forms import ContactForm
 from flask import redirect, render_template, flash, request, url_for
 
+
 @app.context_processor
 def inject_dict_for_all_templates():
     nav_info = utils.readJson(os.path.join('main', 'content', 'nav.json'))
@@ -12,16 +13,24 @@ def inject_dict_for_all_templates():
 
 @app.route('/')
 def index():
-    clients_info = utils.readJson(os.path.join('main', 'content', 'clients.json'))
-    carousel_info = utils.readJson(os.path.join('main', 'content', 'index-carousel.json'))
+    clients_info = utils.readJson(
+        os.path.join('main', 'content', 'clients.json'))
+    carousel_info = utils.readJson(os.path.join(
+        'main', 'content', 'index-carousel.json'))
     return render_template('views/index/index.html', index=True,
-                           clients=clients_info,carousel_info=carousel_info)
+                           clients=clients_info, carousel_info=carousel_info)
 
 
 @app.route('/sobre-nosotros')
 def sobre_nosotros():
     return render_template('views/about/about.html', dir_title='Sobre \
                            Nosotros')
+
+
+@app.route('/servicios')
+def servicios():
+    return render_template(
+        'views/services/services.html', dir_title='Servicios')
 
 
 @app.route('/contacto', methods=['GET', 'POST'])
@@ -42,6 +51,3 @@ def contacto():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('views/404.html', dir_title='Not Found'), 404
-
-
-

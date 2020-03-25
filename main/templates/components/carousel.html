@@ -31,7 +31,7 @@
                     <h5 class="text-uppercase pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown"
                         data-wow-delay="0.3s">Advisory & Management Services</h5>
                     <div class="wow fadeInDown" data-wow-delay="0.3s">
-                        <button id="{{ loop.index }}" onclick="location.href = '{{ url_for('contacto') }}'" class="btn btn-amber btn-lg btn-rounded waves-effect waves-light">Contactenos</button>
+                        <button id="{{ loop.index }}" onclick="location.href = '{{ url_for(slide.btn.href) }}'" class="btn btn-amber btn-lg btn-rounded waves-effect waves-light">{{ slide.btn.text }}</button>
                     </div>
                 </div>
             </div>
