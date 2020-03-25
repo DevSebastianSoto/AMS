@@ -23,7 +23,7 @@ header,
     font-size: 1.18rem;
   }
   .ams-logo {
-    content: url("../img/svg/ams_light.svg");
+    content: url("../img/svg/ams_dark.svg");
   }
 }
 
@@ -64,4 +64,14 @@ div.view.jarallax {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

@@ -8,3 +8,43 @@
     </p>
 </div>
 {% endmacro %}
+
+{% macro full_screen(id,info,folder,mask_color="rgba-black-light") %}
+<div id="{{ id+'_indicators' }}" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for client_row in clients | batch(3) %}
+        <li data-target="#{{ id+'_indicators' }}" data-slide-to="{{ loop.index-1 }}"
+            class="{{ 'active' if loop.index == 1 }} primary-color"></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        {% for slide in info %}
+        {% set bg = url_for('static', filename='img/'+folder+'/'+slide.img) %}
+        <div class="carousel-item {{ 'active' if loop.index == 1 }} view jarallax z-depth-1"
+            data-jarallax='{"speed": 0.2}' style="background-image: url('{{ bg }}')">
+            <div class="mask {{ mask_color }} row align-items-center">
+                <div class="col text-center">
+                    <h1 class="display-3 mb-0 pt-md-5 pt-5 white-text font-weight-bold wow fadeInDown"
+                        data-wow-delay="0.3s">{{ slide.title + ' '}}
+                        <span class="text-primary font-weight-bold">{{ slide.title_color }}</span>
+                    </h1>
+                    <h5 class="text-uppercase pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown"
+                        data-wow-delay="0.3s">Advisory & Management Services</h5>
+                    <div class="wow fadeInDown" data-wow-delay="0.3s">
+                        <button id="{{ loop.index }}" onclick="location.href = '{{ url_for('contacto') }}'" class="btn btn-amber btn-lg btn-rounded waves-effect waves-light">Contactenos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#{{ id+'_indicators' }}" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#{{ id+'_indicators' }}" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+{% endmacro %}

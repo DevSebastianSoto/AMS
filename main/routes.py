@@ -13,8 +13,9 @@ def inject_dict_for_all_templates():
 @app.route('/')
 def index():
     clients_info = utils.readJson(os.path.join('main', 'content', 'clients.json'))
+    carousel_info = utils.readJson(os.path.join('main', 'content', 'index-carousel.json'))
     return render_template('views/index/index.html', index=True,
-                           clients=clients_info)
+                           clients=clients_info,carousel_info=carousel_info)
 
 
 @app.route('/sobre-nosotros')

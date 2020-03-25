@@ -1,0 +1,32 @@
+[
+    {
+        "img": "campaign-creators.jpg",
+        "title": "Estamos listos para",
+        "title_color": "ayudarle",
+        "btn": {
+            "text": "contactenos",
+            "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
+            "href": "tet"
+        }
+    },
+    {
+        "img": "joao-silas.jpg",
+        "title": "Estamos listos para",
+        "title_color": "ayudarle",
+        "btn": {
+            "text": "contactenos",
+            "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
+            "href": "tet"
+        }
+    },
+    {
+        "img": "tom-parkes.jpg",
+        "title": "Estamos listos para",
+        "title_color": "ayudarle",
+        "btn": {
+            "text": "contactenos",
+            "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
+            "href": "tet"
+        }
+    }
+]
