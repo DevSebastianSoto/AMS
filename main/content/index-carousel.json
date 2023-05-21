@@ -1,32 +1,32 @@
 [
-    {
-        "img": "campaign-creators.jpg",
-        "title": "Trabajamos en equipo con ",
-        "title_color": "usted",
-        "btn": {
-            "text": "contactenos",
-            "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
-            "href": "contacto"
-        }
-    },
-    {
-        "img": "joao-silas.jpg",
-        "title": "Encontramos una solución a su",
-        "title_color": "medida",
-        "btn": {
-            "text": "Mire nuestros servicios",
-            "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
-            "href": "servicios"
-        }
-    },
-    {
-        "img": "tom-parkes.jpg",
-        "title": "Tenemos alianzas para apoyarlos",
-        "title_color": "integralmente",
-        "btn": {
-            "text": "contactenos",
-            "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
-            "href": "contacto"
-        }
+  {
+    "img": "campaign-creators.jpg",
+    "title": "Trabajamos en equipo con ",
+    "title_color": "usted",
+    "btn": {
+      "text": "contactenos",
+      "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
+      "href": "contacto"
     }
+  },
+  {
+    "img": "joao-silas.jpg",
+    "title": "Encontramos una solución a su",
+    "title_color": "medida",
+    "btn": {
+      "text": "Mire nuestros servicios",
+      "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
+      "href": "servicios"
+    }
+  },
+  {
+    "img": "tom-parkes.jpg",
+    "title": "Tenemos alianzas para apoyarlos",
+    "title_color": "integralmente",
+    "btn": {
+      "text": "contactenos",
+      "classes": "btn btn-amber btn-lg btn-rounded waves-effect waves-light",
+      "href": "contacto"
+    }
+  }
 ]
