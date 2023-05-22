@@ -1,8 +1,11 @@
 import os
-from main import app
+from urllib.parse import urlparse, urlunparse
+
+from flask import Flask, flash, redirect, render_template, request, url_for
+
 import main.utils as utils
+from main import app
 from main.forms import ContactForm
-from flask import redirect, render_template, flash, request, url_for
 
 
 @app.context_processor
@@ -46,6 +49,19 @@ def contacto():
 
     return render_template('views/contact/contact.html', dir_title='Contact',
                            form=form)
+
+
+app = Flask(__name__)
+
+
+@app.before_request
+def redirect_nonwww():
+    """Redirect non-www requests to www."""
+    urlparts = urlparse(request.url)
+    if urlparts.netloc == 'ams-cr.com':
+        urlparts_list = list(urlparts)
+        urlparts_list[1] = 'www.ams-cr.com'
+        return redirect(urlunparse(urlparts_list), code=301)
 
 
 @app.errorhandler(404)
